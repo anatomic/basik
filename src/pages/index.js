@@ -1,17 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <h1>Bringing lasting change to children's lives through education</h1>
+    <p>
+      We are working to <strong>end poverty through education</strong> and give
+      children the opportunity to have a brighter future. BASIK provides schools
+      with running water, desks, toilets and a building that will last. We also
+      ensure that children who cannot afford to go to school can go and give{" "}
+      <strong>all pupils a malaria net</strong> to take home.
+    </p>
+    <p>
+      With your help we can bring lasting change to children's lives by giving
+      them an education.
+    </p>
   </Layout>
 )
 
