@@ -1,0 +1,14 @@
+{
+  "short_name": "BASIK",
+  "name": "Build A School In Kenya - BASIK",
+  "theme_color": "#d3702e",
+  "background_color": "#d3702e",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/static/og-image",
+      "type": "image/png",
+      "sizes": "450x450"
+    }
+  ]
+}
