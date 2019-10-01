@@ -1,0 +1,14 @@
+{
+    "production": {
+        "awscloudformation": {
+            "AuthRoleName": "basik-production-20191001090643-authRole",
+            "UnauthRoleArn": "arn:aws:iam::839367879481:role/basik-production-20191001090643-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::839367879481:role/basik-production-20191001090643-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "basik-production-20191001090643-deployment",
+            "UnauthRoleName": "basik-production-20191001090643-unauthRole",
+            "StackName": "basik-production-20191001090643",
+            "StackId": "arn:aws:cloudformation:eu-west-2:839367879481:stack/basik-production-20191001090643/6860dbf0-e422-11e9-976b-0aea06869730"
+        }
+    }
+}
