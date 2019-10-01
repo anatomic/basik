@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/contact",
+            "lambdaFunction": "contactFormLambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "contactForm",
+    "apiName": "contactForm",
+    "functionArns": [
+        {
+            "lambdaFunction": "contactFormLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "basik-production-20191001090643-authRole",
+        "unAuthRoleName": "basik-production-20191001090643-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "contactFormLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
