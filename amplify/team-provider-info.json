@@ -9,6 +9,11 @@
             "UnauthRoleName": "basik-production-20191001090643-unauthRole",
             "StackName": "basik-production-20191001090643",
             "StackId": "arn:aws:cloudformation:eu-west-2:839367879481:stack/basik-production-20191001090643/6860dbf0-e422-11e9-976b-0aea06869730"
+        },
+        "categories": {
+            "function": {
+                "contactFormLambda": {}
+            }
         }
     }
 }

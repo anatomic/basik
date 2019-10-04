@@ -1,7 +1,20 @@
 import React from "react"
+import { API } from "aws-amplify"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const contact = ({ name, email, message }) => {
+  const response = API.post("contactForm", "/contact", {
+    body: {
+      name,
+      email,
+      message,
+    },
+  })
+  console.log("do a contact")
+  return response
+}
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +31,13 @@ const IndexPage = () => (
       With your help we can bring lasting change to children's lives by giving
       them an education.
     </p>
+    <button
+      onClick={() =>
+        contact({ name: "Ian", email: "ian@ian-thomas.net", message: "test" })
+      }
+    >
+      Send a test contact
+    </button>
   </Layout>
 )
 
