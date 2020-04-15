@@ -1,0 +1,9 @@
+.contact-form-field {
+    width: 100%;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.contact-field {
+    display: block;
+    border: 1px solid #cdcdcd;
+}

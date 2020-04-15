@@ -1,3 +1,4 @@
+
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "Lambda resource stack creation using Amplify CLI",
@@ -63,7 +64,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "basik-production-20191001090643-deployment",
-					"S3Key": "amplify-builds/contactFormLambda-614a3231464c656b4c53-build.zip"
+					"S3Key": "amplify-builds/contactFormLambda-313747656e6b7256696f-build.zip"
 				}
 			}
 		},

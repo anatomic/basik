@@ -1,62 +1,69 @@
-/*
-Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
-    http://aws.amazon.com/apache2.0/
-or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License.
-*/
-
-var express = require("express")
-var bodyParser = require("body-parser")
-var awsServerlessExpressMiddleware = require("aws-serverless-express/middleware")
+var express = require("express");
+var bodyParser = require("body-parser");
+var awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 var mailgun = require("mailgun-js")({
   apiKey: process.env.EMAIL_API_KEY,
   domain: process.env.EMAIL_DOMAIN,
-})
+});
 
-// declare a new express app
-var app = express()
-app.use(bodyParser.json())
-app.use(awsServerlessExpressMiddleware.eventContext())
+var app = express();
+app.use(bodyParser.json());
+app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
-  )
-  next()
-})
+  );
+  next();
+});
+
+const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+const isEmailValid = email => email && EMAIL_REGEX.test(email);
+const isInputValid = input => input && input.length > 0;
+
+const createEmailBody = ({ name, email, message }) => `
+Email received from ${name} - ${email}
+
+${message}
+`;
 
 app.post("/contact", function(req, res) {
-  // Add your code here
+  if (
+    isEmailValid(req.body.email) === false ||
+    isInputValid(req.body.message) === false
+  ) {
+    return res.status(400).json({
+      success: false,
+      error: "Valid email address and message are required",
+    });
+  }
   mailgun.messages().send(
     {
       from: "BASIK Website <website@basik.org.uk>",
       to: "ian+basik@ian-thomas.net",
       subject: "Contact from the BASIK website",
-      text: req.body.message,
+      text: createEmailBody(req.body),
     },
-    (error, body) => {
+    (error, _) => {
       if (error) {
-        return res.status(502).json({ error: error.message })
+        return res
+          .status(502)
+          .json({ success: false, errors: ["Failed to send message"] });
       }
-      return res.json({
-        success: "post call succeed!",
-        url: req.url,
-        body,
-        env: process.env,
-      })
+      return res.json({ success: true });
     }
-  )
-})
+  );
+});
 
 app.listen(3000, function() {
-  console.log("App started")
-})
+  console.log("App started");
+});
 
 // Export the app object. When executing the application local this does nothing. However,
 // to port it to AWS Lambda we will create a wrapper around that will load the app from
 // this file
-module.exports = app
+module.exports = app;

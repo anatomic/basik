@@ -1,8 +1,8 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import Img from "gatsby-image"
+import { Link, graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import Img from "gatsby-image";
 
-import "./header.css"
+import "./header.css";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -15,16 +15,16 @@ const Header = () => {
         }
       }
     }
-  `)
+  `);
   return (
-    <header class="header">
-      <div class="logo">
+    <header className="header">
+      <div className="logo">
         <Link to="/">
           <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         </Link>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
