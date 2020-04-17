@@ -1,0 +1,18 @@
+name = "basik"
+type = "webpack"
+account_id = "a2e66dc9aad27b05cad61eea6e454aae"
+workers_dev = false
+route = "dev.basik.org.uk/*"
+zone_id = "5c8f424c0f0576c69a216eac2ca4fb15"
+
+[site]
+bucket = "./_site"
+entry-point = "workers-site"
+
+[env.staging]
+name = "basik staging"
+route = "staging.basik.org/*"
+
+[env.prod]
+name = "basik production"
+route = "basik.org.uk/*"
