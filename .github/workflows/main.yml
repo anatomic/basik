@@ -25,7 +25,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Build
+    - name: NPM Install and Build
       run: 'npm install && npm run build'
 
   deploy:
