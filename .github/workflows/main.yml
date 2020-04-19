@@ -30,6 +30,7 @@ jobs:
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: Publish
         uses: cloudflare/wrangler-action@1.1.0
