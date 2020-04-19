@@ -10,6 +10,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  NODE_ENV: production
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,8 +28,11 @@ jobs:
     - name: Build
       run: 'npm install && npm run build'
 
-    # Runs a single command using the runners shell
-    - name: Publish
-      uses: cloudflare/wrangler-action@1.1.0
-      with:
-        apiToken: ${{ secrets.CF_API_TOKEN }}
+  deploy:
+    needs: build
+    steps:
+      - name: Publish
+        uses: cloudflare/wrangler-action@1.1.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+
