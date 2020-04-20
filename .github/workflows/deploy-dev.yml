@@ -1,0 +1,27 @@
+name: Deploy Dev Site
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  NODE_ENV: production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: NPM Install
+        run: npm install
+
+      - name: Build site
+        run: npm run build
+
+      - name: Publish
+        uses: cloudflare/wrangler-action@1.1.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
