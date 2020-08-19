@@ -1,3 +1,5 @@
 node_modules
-dist
-_site
+dist/
+_site/
+tmp/
+.cache/
