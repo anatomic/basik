@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-$yellow: #f0df21;
-
 p {
     @apply mb-4;
 }
 
 .video-banner {
-    background-color: $yellow;
+    background-color: #f0df21;
     padding-bottom: 56.12%;
 }

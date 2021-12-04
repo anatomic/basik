@@ -1,5 +1,4 @@
-module.exports = config => {
-
+module.exports = (config) => {
   config.addPassthroughCopy("src/site/img");
   config.addPassthroughCopy("src/site/js");
   config.addPassthroughCopy("src/site/css");
@@ -8,7 +7,7 @@ module.exports = config => {
     dir: {
       input: "src/site",
       includes: "src/site/__includes",
-      output: "tmp"
-    }
-  }
-}
+      output: "_site",
+    },
+  };
+};

@@ -1,10 +1,15 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  purge: [
-    './tmp/**/*.html'
-  ],
+  purge: ["./src/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        orange: colors.orange,
+        "basik-yellow": "#f0df21",
+      },
+    },
   },
   variants: {},
   plugins: [],
-}
+};
