@@ -11,7 +11,7 @@
     "watch:site": "eleventy --serve",
     "watch:assets": "tailwindcss --jit --output src/site/css/styles.css --input src/css/styles.css -w",
     "dev": "run-p watch:*",
-    "build": "run-s clean build:site build:assets"
+    "build": "run-s clean build:assets build:site"
   },
   "repository": {
     "type": "git",
