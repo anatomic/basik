@@ -1,15 +1,19 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./src/**/*.html"],
+  content: ["./src/**/*.html"],
   theme: {
-    extend: {
-      colors: {
-        orange: colors.orange,
-        "basik-yellow": "#f0df21",
-      },
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      orange: colors.orange,
     },
   },
-  variants: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
