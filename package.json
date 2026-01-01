@@ -10,7 +10,7 @@
     "build:assets": "tailwindcss -o src/site/css/styles.css -i src/css/styles.css --minify",
     "watch:site": "eleventy --serve",
     "watch:assets": "tailwindcss -o src/site/css/styles.css -i src/css/styles.css --watch",
-    "dev": "run-p watch:*",
+    "dev": "run-s build:assets && run-p watch:*",
     "build": "run-s clean build:assets build:site"
   },
   "repository": {

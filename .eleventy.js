@@ -2,6 +2,7 @@ module.exports = (config) => {
   config.addPassthroughCopy("src/site/img");
   config.addPassthroughCopy("src/site/js");
   config.addPassthroughCopy("src/site/css");
+  config.setServerPassthroughCopyBehavior("passthrough");
 
   return {
     dir: {
