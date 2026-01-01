@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Cache static assets for 1 year (they have cache-busting hashes)
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Redirect contact form success
+[[redirects]]
+  from = "/contact"
+  to = "/contact-success"
+  status = 200
+  conditions = {Method = ["POST"]}
+  force = false

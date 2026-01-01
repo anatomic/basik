@@ -67,7 +67,15 @@ basik/
 
 ## Deployment
 
-The site is automatically deployed to **AWS Amplify** on push to the `master` branch.
+The site is automatically deployed to **Netlify** on push to the `master` branch.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-SITE-ID/deploy-status)](https://app.netlify.com/sites/YOUR-SITE-NAME/deploys)
+
+## Content Management
+
+Content editors can access the CMS at [www.basik.org.uk/admin](https://www.basik.org.uk/admin).
+
+The site uses [Decap CMS](https://decapcms.org/) (formerly Netlify CMS) with Netlify Identity for authentication.
 
 ## Contributing
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title or "Build A School In Kenya" }} | BASIK</title>
+    <link rel="stylesheet" href="/css/styles.css?v={{ cacheBust.css }}" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3FVQLLRLB0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3FVQLLRLB0");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ description or 'Build A School In Kenya - Bringing lasting change to children\'s lives through education' }}"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title or 'BASIK' }} - Build A School In Kenya" />
+    <meta
+      property="og:description"
+      content="{{ description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
+    />
+    <meta property="og:image" content="/img/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title or 'BASIK' }} - Build A School In Kenya" />
+    <meta
+      name="twitter:description"
+      content="{{ description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
+    />
+    <meta name="twitter:image" content="/img/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://widgets.justgiving.com" />
+    <link rel="preconnect" href="https://www.youtube.com" />
+
+    <!-- Netlify Identity widget for CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script type="module" src="/js/main.js?v={{ cacheBust.js }}"></script>
+  </head>
+  <body class="md:text-base lg:text-lg">
+    <!-- Skip to main content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white"
+      >Skip to main content</a
+    >
+
+    {% include "header.njk" %}
+
+    <main id="main-content">
+      {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <!-- Netlify Identity redirect -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# Media files will be stored in the repo under src/site/img/uploads
+media_folder: "src/site/img/uploads"
+public_folder: "/img/uploads"
+
+# Editorial workflow for draft/review/publish
+publish_mode: editorial_workflow
+
+collections:
+  # Projects collection
+  - name: "projects"
+    label: "Projects"
+    folder: "src/site/_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Short Description"
+        name: "description"
+        widget: "text"
+        hint: "A brief summary shown on the homepage"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 0
+        hint: "Lower numbers appear first"
+      - label: "Active"
+        name: "active"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to hide this project"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # News/Blog collection
+  - name: "blog"
+    label: "News & Updates"
+    folder: "src/site/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        required: false
+        hint: "A brief summary for listings and social sharing"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Comma-separated tags"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # Site settings (single file)
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/site/_data/settings.json"
+        fields:
+          - label: "Site Title"
+            name: "title"
+            widget: "string"
+            default: "BASIK - Build A School In Kenya"
+          - label: "Site Description"
+            name: "description"
+            widget: "text"
+          - label: "Contact Email"
+            name: "email"
+            widget: "string"
+            default: "info@basik.org.uk"
+          - label: "JustGiving URL"
+            name: "justgivingUrl"
+            widget: "string"
+            default: "https://www.justgiving.com/basikuk"
+          - label: "Facebook URL"
+            name: "facebookUrl"
+            widget: "string"
+            default: "https://www.facebook.com/BuildSchoolsEndPoverty"
