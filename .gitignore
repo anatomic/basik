@@ -5,3 +5,7 @@ _site/
 tmp/
 .cache/
 src/site/css
+
+# Claude Flow tooling
+.claude-flow/
+.swarm/
