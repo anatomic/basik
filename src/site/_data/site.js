@@ -1,6 +1,6 @@
-const buildTime = new Date()
+const buildTime = new Date();
 
 module.exports = {
   buildTime,
-  year: buildTime.getFullYear()
-}
+  year: buildTime.getFullYear(),
+};

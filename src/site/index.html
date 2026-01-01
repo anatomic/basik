@@ -5,13 +5,18 @@
     <title>Build A School In Kenya</title>
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FVQLLRLB0"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3FVQLLRLB0"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-3FVQLLRLB0');
+      gtag("config", "G-3FVQLLRLB0");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -262,11 +267,23 @@
               id="jg-fundraiser-leaderboard"
               data-config="id=3210395,layout=small"
             ></div>
+            <script>
+              (function (d) {
+                var jg = d.createElement("script");
+                jg.type = "text/javascript";
+                jg.async = true;
+                jg.src =
+                  d.location.protocol == "https:"
+                    ? "https://widgets.justgiving.com/fundraiser-leaderboard/host.js"
+                    : "http://widgets.justgiving.com/fundraiser-leaderboard/host.js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(jg, s);
+              })(document);
+            </script>
           </div>
         </div>
       </div>
     </section>
-
     <section class="bg-gray-100 bg-gradient-to-b">
       <footer class="container mx-auto items-end p-5 sm:flex">
         <div class="mb-8 w-full flex-1 sm:mb-0 md:w-auto">
@@ -292,18 +309,5 @@
         </div>
       </footer>
     </section>
-    <script>
-      (function (d) {
-        var jg = d.createElement("script");
-        jg.type = "text/javascript";
-        jg.async = true;
-        jg.src =
-          d.location.protocol == "https:"
-            ? "https://widgets.justgiving.com/fundraiser-leaderboard/host.js"
-            : "http://widgets.justgiving.com/fundraiser-leaderboard/host.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(jg, s);
-      })(document);
-    </script>
   </body>
 </html>

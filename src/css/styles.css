@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 p {
-    @apply mb-4;
+  @apply mb-4;
 }
 
 .video-banner {
-    background-color: #f0df21;
-    padding-bottom: 56.12%;
+  background-color: #f0df21;
+  padding-bottom: 56.12%;
 }

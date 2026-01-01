@@ -1,1 +1,1 @@
-console.log("Hello from a dyanmic module!")
+console.log("Hello from a dyanmic module!");

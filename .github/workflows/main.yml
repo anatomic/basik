@@ -2,7 +2,7 @@ name: Build Site
 
 on:
   pull_request:
-    branches: [ master, staging, dev ]
+    branches: [master, staging, dev]
 
 env:
   NODE_ENV: production
@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: NPM Install
-      run: npm install
+      - name: NPM Install
+        run: npm install
 
-    - name: Build site
-      run: npm run build
+      - name: Build site
+        run: npm run build
