@@ -2,9 +2,11 @@
   "name": "BASIK",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
     "clean": "rimraf _site",
     "build:site": "eleventy",
     "build:css": "tailwindcss -o src/site/css/styles.css -i src/css/styles.css --minify",
@@ -14,7 +16,7 @@
     "watch:css": "tailwindcss -o src/site/css/styles.css -i src/css/styles.css --watch",
     "watch:js": "esbuild src/js/main.js --bundle --outfile=src/site/js/main.js --format=esm --watch",
     "dev": "run-s build:assets && run-p watch:*",
-    "build": "run-s clean build:assets build:site"
+    "build": "run-s lint clean build:assets build:site"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,8 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18"

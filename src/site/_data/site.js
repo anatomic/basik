@@ -1,6 +1,6 @@
 const buildTime = new Date();
 
-module.exports = {
+export default {
   buildTime,
   year: buildTime.getFullYear(),
 };

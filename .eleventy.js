@@ -1,4 +1,4 @@
-module.exports = (config) => {
+export default (config) => {
   // Passthrough copy for static assets
   config.addPassthroughCopy("src/site/img");
   config.addPassthroughCopy("src/site/js");
