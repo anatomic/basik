@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: News & Updates
+description: The latest news and updates from BASIK - Build A School In Kenya.
+---
+
+<div class="bg-white py-24 dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">News & Updates</h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Stay up to date with our latest projects, events, and stories from Kenya.
+      </p>
+    </div>
+
+    {% if collections.blog.length > 0 %}
+    <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {% for post in collections.blog %}
+      <article class="flex flex-col items-start">
+        {% if post.data.image %}
+        <a href="{{ post.url }}" class="relative w-full">
+          <img src="{{ post.data.image }}" alt="" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover dark:bg-gray-800" loading="lazy" />
+        </a>
+        {% endif %}
+        <div class="max-w-xl">
+          <div class="mt-6 flex items-center gap-x-4 text-xs">
+            <time datetime="{{ post.date | isoDate }}" class="text-gray-500 dark:text-gray-400">
+              {{ post.date | dateFormat }}
+            </time>
+            {% if post.data.tags %}
+              {% for tag in post.data.tags %}
+                {% if loop.index <= 2 %}
+                <span class="rounded-full bg-orange-50 px-3 py-1.5 font-medium text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">{{ tag }}</span>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div class="group relative">
+            <h2 class="mt-3 text-lg font-semibold text-gray-900 group-hover:text-orange-600 dark:text-white dark:group-hover:text-orange-400">
+              <a href="{{ post.url }}">
+                <span class="absolute inset-0"></span>
+                {{ post.data.title }}
+              </a>
+            </h2>
+            {% if post.data.summary %}
+            <p class="mt-3 line-clamp-3 text-sm text-gray-600 dark:text-gray-300">{{ post.data.summary }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="mx-auto mt-16 max-w-2xl text-center">
+      <p class="text-gray-600 dark:text-gray-400">No news posts yet. Check back soon!</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
