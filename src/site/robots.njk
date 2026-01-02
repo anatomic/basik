@@ -1,0 +1,16 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# robots.txt for {{ settings.title }}
+# Generated at build time: {{ site.buildTime | isoDate }}
+
+User-agent: *
+Allow: /
+
+# Disallow admin and utility pages
+Disallow: /admin/
+Disallow: /contact-success/
+
+# Sitemap location
+Sitemap: https://www.basik.org.uk/sitemap.xml

@@ -41,6 +41,11 @@
     />
     <meta name="twitter:image" content="/img/og-image.png" />
 
+    <!-- Robots directive (if specified in frontmatter) -->
+    {% if robots %}
+    <meta name="robots" content="{{ robots }}" />
+    {% endif %}
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/logo.png" />
 
