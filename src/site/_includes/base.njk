@@ -20,26 +20,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="{{ description or 'Build A School In Kenya - Bringing lasting change to children\'s lives through education' }}"
+      content="{{ summary or description or 'Build A School In Kenya - Bringing lasting change to children\'s lives through education' }}"
     />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}" />
+    <meta property="og:url" content="{{ settings.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ title or 'BASIK' }} - Build A School In Kenya" />
     <meta
       property="og:description"
-      content="{{ description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
+      content="{{ summary or description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
     />
-    <meta property="og:image" content="/img/og-image.png" />
+    <meta property="og:image" content="{{ settings.url }}{{ image or '/img/og-image.png' }}" />
+    <meta property="og:site_name" content="BASIK - Build A School In Kenya" />
+    {% if layout == 'post.njk' %}
+    <meta property="article:published_time" content="{{ date | isoDate }}" />
+    {% endif %}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ title or 'BASIK' }} - Build A School In Kenya" />
     <meta
       name="twitter:description"
-      content="{{ description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
+      content="{{ summary or description or 'Bringing lasting change to children\'s lives through education. Help us end poverty by building schools in Kenya.' }}"
     />
-    <meta name="twitter:image" content="/img/og-image.png" />
+    <meta name="twitter:image" content="{{ settings.url }}{{ image or '/img/og-image.png' }}" />
 
     <!-- Robots directive (if specified in frontmatter) -->
     {% if robots %}
