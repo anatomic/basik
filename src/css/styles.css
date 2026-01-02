@@ -30,7 +30,7 @@
   --color-orange-950: #431407;
 }
 
-@source "../site/**/*.html";
+@source "../site/**/*.{html,njk,md}";
 
 p {
   margin-bottom: 1rem;

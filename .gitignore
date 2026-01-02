@@ -5,6 +5,7 @@ _site/
 tmp/
 .cache/
 src/site/css
+src/site/js/main.js
 
 # Claude Flow tooling
 .claude-flow/
