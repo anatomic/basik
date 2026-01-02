@@ -19,12 +19,12 @@ description: The latest news and updates from BASIK - Build A School In Kenya.
       <article class="flex flex-col items-start">
         {% if post.data.image %}
         <a href="{{ post.url }}" class="relative w-full">
-          <img src="{{ post.data.image }}" alt="" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover dark:bg-gray-800" loading="lazy" />
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover dark:bg-gray-800" loading="lazy" />
         </a>
         {% endif %}
         <div class="max-w-xl">
           <div class="mt-6 flex items-center gap-x-4 text-xs">
-            <time datetime="{{ post.date | isoDate }}" class="text-gray-500 dark:text-gray-400">
+            <time datetime="{{ post.date | isoDate }}" class="text-gray-600 dark:text-gray-400">
               {{ post.date | dateFormat }}
             </time>
             {% if post.data.tags %}
