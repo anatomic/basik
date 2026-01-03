@@ -4,17 +4,30 @@ layout: base.njk
 
 <article class="bg-white py-24 dark:bg-gray-900">
   <div class="mx-auto max-w-4xl px-6 lg:px-8">
-    {% if (date | isFutureDate) and not isProduction %}
-    <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
-      <div class="flex items-center gap-3">
-        <svg class="h-5 w-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <p class="text-sm font-medium text-amber-800 dark:text-amber-300">
-          <strong>Scheduled post:</strong> This post is scheduled to be published on {{ date | dateFormat }}. It's only visible in preview environments.
-        </p>
+    {% if not isProduction %}
+      {% if not published %}
+      <div class="mb-8 rounded-lg border border-gray-300 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-800">
+        <div class="flex items-center gap-3">
+          <svg class="h-5 w-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+          </svg>
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            <strong>Draft:</strong> This post is not published. Set "Published" to true in the CMS to make it visible on the live site.
+          </p>
+        </div>
       </div>
-    </div>
+      {% elif date | isFutureDate %}
+      <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
+        <div class="flex items-center gap-3">
+          <svg class="h-5 w-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-sm font-medium text-amber-800 dark:text-amber-300">
+            <strong>Scheduled post:</strong> This post is scheduled to be published on {{ date | dateFormat }}. It's only visible in preview environments.
+          </p>
+        </div>
+      </div>
+      {% endif %}
     {% endif %}
     <header class="mb-10">
       <a href="/news/" class="mb-4 inline-flex items-center text-sm text-orange-600 hover:underline dark:text-orange-400">

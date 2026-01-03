@@ -5,8 +5,8 @@ name: Scheduled Blog Publish
 
 on:
   schedule:
-    # Run every day at 6:00 AM UTC (7:00 AM UK / 8:00 AM UK during BST)
-    - cron: "0 6 * * *"
+    # Run every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: "0 */6 * * *"
   # Allow manual triggering for testing
   workflow_dispatch:
 
