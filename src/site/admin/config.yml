@@ -7,38 +7,6 @@ media_folder: "src/site/img/uploads"
 public_folder: "/img/uploads"
 
 collections:
-  # Projects collection
-  - name: "projects"
-    label: "Projects"
-    folder: "src/site/_projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Featured Image"
-        name: "image"
-        widget: "image"
-        required: true
-      - label: "Short Description"
-        name: "description"
-        widget: "text"
-        hint: "A brief summary shown on the homepage"
-      - label: "Display Order"
-        name: "order"
-        widget: "number"
-        default: 0
-        hint: "Lower numbers appear first"
-      - label: "Active"
-        name: "active"
-        widget: "boolean"
-        default: true
-        hint: "Uncheck to hide this project"
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-
   # News/Blog collection
   - name: "blog"
     label: "News & Updates"
@@ -76,9 +44,9 @@ collections:
         name: "body"
         widget: "markdown"
 
-  # Site settings (single file)
+  # Site settings (single files)
   - name: "settings"
-    label: "Site Settings"
+    label: "Settings"
     files:
       - name: "general"
         label: "General Settings"
@@ -103,3 +71,100 @@ collections:
             name: "facebookUrl"
             widget: "string"
             default: "https://www.facebook.com/BuildSchoolsEndPoverty"
+
+      - name: "homepage"
+        label: "Homepage"
+        file: "src/site/_data/homepage.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Background Image"
+                name: "backgroundImage"
+                widget: "image"
+              - label: "Announcement Text"
+                name: "announcementText"
+                widget: "string"
+                hint: "Text shown in the banner above the headline"
+              - label: "Announcement Link"
+                name: "announcementLink"
+                widget: "string"
+                hint: "URL for the announcement banner"
+              - label: "Headline"
+                name: "headline"
+                widget: "string"
+              - label: "Subheading"
+                name: "subheading"
+                widget: "markdown"
+                hint: "Supports markdown for bold text etc."
+
+          - label: "Video Section"
+            name: "video"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+              - label: "YouTube Video ID"
+                name: "youtubeId"
+                widget: "string"
+                hint: "Just the ID from the YouTube URL, e.g. _is2tZbvluI"
+
+          - label: "Projects Section"
+            name: "projects"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+              - label: "Projects"
+                name: "items"
+                widget: "list"
+                fields:
+                  - label: "Project Name"
+                    name: "name"
+                    widget: "string"
+                  - label: "Description"
+                    name: "description"
+                    widget: "markdown"
+                  - label: "Images"
+                    name: "images"
+                    widget: "list"
+                    fields:
+                      - label: "Image"
+                        name: "src"
+                        widget: "image"
+                      - label: "Alt Text"
+                        name: "alt"
+                        widget: "string"
+
+          - label: "Donations Section"
+            name: "donations"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+              - label: "Introduction"
+                name: "intro"
+                widget: "markdown"
+              - label: "Donation Options"
+                name: "options"
+                widget: "list"
+                max: 3
+                fields:
+                  - label: "Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Description"
+                    name: "description"
+                    widget: "markdown"
+                  - label: "Button Text"
+                    name: "buttonText"
+                    widget: "string"
+                  - label: "Button Style"
+                    name: "buttonStyle"
+                    widget: "select"
+                    options: ["primary", "secondary"]
+                    default: "primary"

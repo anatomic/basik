@@ -33,6 +33,7 @@
     "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindplus/elements": "^1.0.21",
+    "markdown-it": "^14.1.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2"
   },

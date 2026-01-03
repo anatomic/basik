@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "backgroundImage": "/img/tecdi-classroom.jpg",
+    "announcementText": "See how your donations help TECDI sponsor children's education.",
+    "announcementLink": "https://tecdi.co.ke/education-sponsorships/",
+    "headline": "Give a child the gift of education",
+    "subheading": "From **£15 a month**, you can sponsor a child through school and change their future forever."
+  },
+  "video": {
+    "title": "Why Build A School In Kenya?",
+    "youtubeId": "_is2tZbvluI"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "items": [
+      {
+        "name": "Tsavo East Community Development Initiative (TECDI)",
+        "description": "We work in partnership with Simon Musila and TECDI, a community organisation near Tsavo East National Park in Kenya's Kasaala region. Together, we identify promising students from disadvantaged families who are at risk of dropping out due to financial hardship.\n\nYour donations fund education sponsorships at three levels: vocational training, secondary school, and university. Each sponsor receives photos of their student and an annual report detailing their progress.\n\nWant to get involved? [Email us](mailto:info@basik.org.uk) or [learn more about TECDI's sponsorship programme](https://tecdi.co.ke/education-sponsorships/).",
+        "images": [
+          {
+            "src": "/img/tecdi-sign.jpg",
+            "alt": "A commemorative plaque announcing the completion of a new classroom"
+          },
+          {
+            "src": "/img/tecdi-classroom.jpg",
+            "alt": "Students in a classroom funded by BASIK"
+          }
+        ]
+      },
+      {
+        "name": "Kilimani Primary School",
+        "description": "BASIK began life in 2006 when we started raising money to fund the rebuilding of Kilimani Primary School.\n\nThe school was a mud hut in a rural location outside Mombasa, with two teachers supporting 70 students. It had no basic facilities and materials. We worked with Head Teacher Julius Nzai to rebuild the school and support children who couldn't afford to pay their fees to get an education.\n\nKilimani now has brick built classrooms for all year groups, a staff room, toilets, clean running water and more teachers to provide a better quality education. The school now supports over 150 students from the local community! This was our first project as a charity and we're very proud of what we helped to achieve at Kilimani and the opportunities the students will gain from an education.",
+        "images": [
+          {
+            "src": "/img/kilimani-school.jpg",
+            "alt": "School children with BASIK sign waving"
+          },
+          {
+            "src": "/img/kilimani-children.jpg",
+            "alt": "Children at school enjoying a breaktime snack"
+          },
+          {
+            "src": "/img/kilimani-sign.jpg",
+            "alt": "BASIK putting up a sign on a classroom"
+          }
+        ]
+      }
+    ]
+  },
+  "donations": {
+    "title": "Help us achieve even more",
+    "intro": "We use JustGiving as our preferred donation method, it's quick, secure and it means that we can easily claim the Gift Aid on any money that is given to the charity.",
+    "options": [
+      {
+        "title": "Make a One Off Donation",
+        "description": "We split our funds between building new facilities, supplying equipment for students and covering any fees required for a child to go to school. Any single donation is vital to ensuring we can continue to provide for our schools and children so please don't hesitate to make a donation of any amount.",
+        "buttonText": "Donate now",
+        "buttonStyle": "primary"
+      },
+      {
+        "title": "Sponsor a Child's Education",
+        "description": "**£15/month** – Vocational training\n**£25/month** – Secondary school\n**£40/month** – University degree\n\nYour sponsorship covers fees, materials, and support. You'll receive photos and annual progress reports.",
+        "buttonText": "Sponsor a child",
+        "buttonStyle": "primary"
+      },
+      {
+        "title": "Fundraise For BASIK",
+        "description": "Have you got a creative idea for a charity event or are you taking part in a challenge? Create a fundraising page on JustGiving and select BASIK as your charity.",
+        "buttonText": "Start fundraising",
+        "buttonStyle": "secondary"
+      }
+    ]
+  }
+}
