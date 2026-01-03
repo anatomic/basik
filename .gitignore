@@ -7,6 +7,9 @@ tmp/
 src/site/css
 src/site/js/main.js
 
+# Test coverage reports
+coverage/
+
 # Claude Flow tooling
 .claude-flow/
 .swarm/

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import settings from '../../../src/site/_data/settings.json' assert { type: 'json' };
+import settings from '../../../src/site/_data/settings.json' with { type: 'json' };
 
 describe('Settings Validation', () => {
   describe('Required Fields', () => {
