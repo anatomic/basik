@@ -6,9 +6,6 @@ backend:
 media_folder: "src/site/img/uploads"
 public_folder: "/img/uploads"
 
-# Editorial workflow for draft/review/publish
-publish_mode: editorial_workflow
-
 collections:
   # Projects collection
   - name: "projects"
