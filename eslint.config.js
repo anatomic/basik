@@ -28,4 +28,19 @@ export default [
   {
     ignores: ["node_modules/**", "_site/**", "src/site/js/main.js"],
   },
+  {
+    files: ['tests/**/*.js'],
+    languageOptions: {
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        vi: 'readonly'
+      }
+    }
+  },
 ];
