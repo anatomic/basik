@@ -27,6 +27,14 @@ description: The latest news and updates from BASIK - Build A School In Kenya.
             <time datetime="{{ post.date | isoDate }}" class="text-gray-600 dark:text-gray-400">
               {{ post.date | dateFormat }}
             </time>
+            {% if (post.date | isFutureDate) and not isProduction %}
+            <span class="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-300">
+              <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Scheduled
+            </span>
+            {% endif %}
             {% if post.data.tags %}
               {% for tag in post.data.tags %}
                 {% if loop.index <= 2 %}
