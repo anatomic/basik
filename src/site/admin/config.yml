@@ -6,9 +6,6 @@ backend:
 media_folder: "src/site/img/uploads"
 public_folder: "/img/uploads"
 
-# Editorial workflow for draft/review/publish
-publish_mode: editorial_workflow
-
 collections:
   # Projects collection
   - name: "projects"
@@ -55,6 +52,12 @@ collections:
       - label: "Publish Date"
         name: "date"
         widget: "datetime"
+        hint: "The date when this post will be published"
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: false
+        hint: "Post must be published AND past its publish date to appear on the live site"
       - label: "Featured Image"
         name: "image"
         widget: "image"

@@ -1,6 +1,7 @@
 ---
 title: "Update from Kenya: How your support changed lives in 2024-2025"
 date: 2025-08-01T09:00:00.000+01:00
+published: true
 image: /img/uploads/unnamed.jpg
 summary: BASIK sponsored 10 new students and provided career-launching laptops
   in 2024-2025. With 97% of funds going directly to education, discover how your

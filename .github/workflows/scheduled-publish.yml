@@ -1,0 +1,21 @@
+name: Scheduled Blog Publish
+
+# This workflow triggers Netlify builds on a schedule to publish scheduled blog posts
+# Blog posts with a future date will be published when the scheduled build runs after that date
+
+on:
+  schedule:
+    # Run every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: "0 */6 * * *"
+  # Allow manual triggering for testing
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify Build Hook
+        run: |
+          echo "Triggering Netlify build for scheduled blog posts..."
+          curl -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          echo "Build triggered successfully!"
