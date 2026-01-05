@@ -17,5 +17,20 @@ jobs:
       - name: Trigger Netlify Build Hook
         run: |
           echo "Triggering Netlify build for scheduled blog posts..."
-          curl -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}"
-          echo "Build triggered successfully!"
+
+          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            echo "Error: NETLIFY_BUILD_HOOK secret is not configured"
+            exit 1
+          fi
+
+          response=$(curl -s --fail -w "\n%{http_code}" -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}")
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+            echo "Build triggered successfully! (HTTP $http_code)"
+          else
+            echo "Error: Build hook failed with HTTP $http_code"
+            echo "Response: $body"
+            exit 1
+          fi

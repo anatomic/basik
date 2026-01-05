@@ -54,6 +54,11 @@ export default (config) => {
     return new Date(date) > new Date();
   });
 
+  // URL encode filter for social sharing links
+  config.addFilter("urlencode", (str) => {
+    return encodeURIComponent(str || "");
+  });
+
   return {
     dir: {
       input: "src/site",
