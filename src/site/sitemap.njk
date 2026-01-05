@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   {%- for page in collections.all %}
   {%- if page.url and not page.data.excludeFromSitemap and not page.data.eleventyExcludeFromCollections and not page.url.startsWith('/admin') %}
   <url>
-    <loc>https://www.basik.org.uk{{ page.url }}</loc>
+    <loc>{{ settings.url }}{{ page.url }}</loc>
     <lastmod>{{ page.date | isoDate }}</lastmod>
     {%- if page.url == "/" %}
     <changefreq>weekly</changefreq>
