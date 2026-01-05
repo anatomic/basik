@@ -23,7 +23,7 @@ jobs:
             exit 1
           fi
 
-          response=$(curl -s -w "\n%{http_code}" -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}")
+          response=$(curl -s --fail -w "\n%{http_code}" -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}")
           http_code=$(echo "$response" | tail -n1)
           body=$(echo "$response" | sed '$d')
 
