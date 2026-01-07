@@ -1,6 +1,15 @@
+import markdownIt from "markdown-it";
+
 export default (config) => {
   // Check if we're in production (Netlify sets CONTEXT=production for production deploys)
   const isProduction = process.env.CONTEXT === "production";
+
+  // Markdown filter for rendering markdown strings in templates
+  const md = markdownIt({ html: true, linkify: true });
+  config.addFilter("md", (content) => {
+    if (!content) return "";
+    return md.render(content);
+  });
 
   // Passthrough copy for static assets
   config.addPassthroughCopy("src/site/img");
