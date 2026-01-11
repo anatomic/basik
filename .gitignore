@@ -4,6 +4,12 @@ dist/
 _site/
 tmp/
 .cache/
+
+# Astro generated
+.astro/
+public/js/main.js
+
+# Legacy Eleventy (can be removed after migration)
 src/site/css
 src/site/js/main.js
 

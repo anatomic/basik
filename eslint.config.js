@@ -26,6 +26,14 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/**", "_site/**", "src/site/js/main.js"],
+    ignores: [
+      "node_modules/**",
+      "_site/**",
+      "dist/**",
+      "src/site/js/main.js",
+      "public/js/main.js",
+      "**/*.astro",
+      ".astro/**",
+    ],
   },
 ];
